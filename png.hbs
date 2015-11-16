@@ -1,0 +1,23 @@
+@mixin calculate($width, $height, $x, $y) {
+    width: $width/2;
+    height: $height/2;
+    background-position: (-$x/2) (-$y/2);
+}
+
+{{#each layouts}}
+.sprite {
+    {{#each sprites}}{{#unless dpi}}
+    @include retina-image($imgPath + sprite, {{width}}px {{height}}px, 'png', null, '@2x', false);
+    {{/unless}}{{/each}}
+    background-repeat: no-repeat;
+    position: relative;
+    display: inline-block;
+    text-indent: -9999px;
+
+    {{#each layout.items}}
+    &--{{meta.name}} {
+        @include calculate({{width}}px, {{height}}px, {{x}}px, {{y}}px);
+    }
+    {{/each}}
+}
+{{/each}}

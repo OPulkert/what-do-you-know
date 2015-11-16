@@ -1,0 +1,19 @@
+@mixin calculate($width, $height, $x, $y) {
+    width: $width/2;
+    height: $height/2;
+    background-position: (-$x/2) (-$y/2);
+}
+
+.sprite {
+    
+    @include retina-image($imgPath + sprite, 34px 34px, 'png', null, '@2x', false);
+    
+    background-repeat: no-repeat;
+    position: relative;
+    display: inline-block;
+    text-indent: -9999px;
+
+    &--youtube {
+        @include calculate(68px, 68px, 0px, 0px);
+    }
+}

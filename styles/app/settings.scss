@@ -1,0 +1,202 @@
+@font-face {
+    font-family: 'Futura-Boo';
+    src: url($fontsPath + '/Futura-Boo.eot?#iefix') format('embedded-opentype'),  url($fontsPath + '/Futura-Boo.woff') format('woff'), url($fontsPath + '/Futura-Boo.ttf')  format('truetype'), url($fontsPath + '/Futura-Boo.svg#Futura-Boo') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Futura-Bol';
+    src: url($fontsPath + '/Futura-Bol.eot?#iefix') format('embedded-opentype'),  url($fontsPath + '/Futura-Bol.otf')  format('opentype'),
+    url($fontsPath + '/Futura-Bol.woff') format('woff'), url($fontsPath + '/Futura-Bol.ttf')  format('truetype'), url($fontsPath + '/Futura-Bol.svg#Futura-Bol') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$futura_regular: 'Futura-Boo', Arial, sans-serif;
+$futura_bold: 'Futura-Bol', Arial,  sans-serif;
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: normal;
+    position: relative;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    font-family: $futura_regular;
+    color: #00529e;
+}
+
+html, body {
+    height: 100%;
+}
+
+ol, ul {
+    list-style: none;
+    margin: 0;
+    padding: 0
+}
+
+p {
+    padding: 0 0 20px 0;
+    line-height: 25px;
+}
+
+a {
+    color: #00529e;
+    font-size: 18px;
+    text-decoration: underline;
+    font-family: $futura_regular;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.dn {
+    display: none;
+}
+
+.cp {
+    cursor: pointer;
+}
+
+.fr {
+    float: right;
+}
+
+.fl {
+    float: left;
+}
+
+.mb40 {
+    margin-bottom: 40px;
+}
+
+.mb20 {
+    margin-bottom: 20px;
+}
+
+.mt30 {
+    margin-top: 30px;
+}
+
+#main {
+    width: 100%;
+    position: relative;
+    height: 100%;
+}
+
+.container {
+    margin: 0 auto;
+    position: relative;
+    padding: 0 10px;
+}
+
+h2 {
+    font-weight: normal;
+    font-size: 30px;
+    color: #8e9dac;
+    font-family: $futura_bold;
+    line-height: 35px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.tac {
+    text-align: center;
+}
+
+.inCenter {
+    text-align: center;
+}
+
+.viewMore {
+    font-family: $futura_bold;
+    font-size: 18px;
+    color: #2b70b9;
+    display: table;
+    margin: 0 auto 50px;
+
+    &.arrow {
+        &:after {
+            content: url($imgPath + 'arrowRight.png');
+            width: 9px;
+            height: 13px;
+            margin-left: 10px;
+            float: right;
+            margin-top: 1px;
+        }
+    }
+}
+
+@mixin clearfix {
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin radius($radius) {
+    border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+}
+
+@mixin opacity($opacity) {
+    $opacity-ie: $opacity * 100;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$opacity-ie)";
+    filter: alpha(opacity=$opacity-ie);
+    -moz-opacity: $opacity;
+    -khtml-opacity: $opacity;
+    opacity: $opacity;
+}
+
+@mixin box-shadow($arguments...) {
+    box-shadow: $arguments;
+    -moz-box-shadow: $arguments;
+    -webkit-box-shadow: $arguments;
+}
+
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+
+@media (min-width: 960px) {
+    .container {
+        padding: 0;
+        width: 960px;
+        margin: 0 auto;
+    }
+}
