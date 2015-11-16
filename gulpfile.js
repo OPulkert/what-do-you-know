@@ -110,6 +110,7 @@ gulp.task('javascript', function() {
         })
         .pipe(source('scripts.js'))
         .pipe(gulp.dest(settings.javascript.dest))
+        .pipe( browserSync.stream() );
 });
 
 gulp.task('uglify', function() {
