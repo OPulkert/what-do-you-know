@@ -1,0 +1,18 @@
+section {
+    position: relative;
+
+    &.carousel {
+        background: #dbdad6;
+        width: 100%;
+        @include clearfix;
+        padding: 20px 0;
+    }
+}
+
+@media(min-width: 768px) {
+    section {
+        &.carousel {
+            padding: 0;
+        }
+    }
+}

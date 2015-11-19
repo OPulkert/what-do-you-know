@@ -1,12 +1,158 @@
 .customCarousel {
     width: 100%;
+    padding-top: 30px;
+    position: relative;
+    @include clearfix;
 
     ul {
         li {
-            img {
-                display: block;
-                max-width: 100%;
-                margin: 0 auto;
+            position: relative;
+
+            .dedicated {
+                font-size: 28px;
+                color: #363636;
+                font-weight: lighter;
+                line-height: 32px;
+                margin-bottom: 30px;
+            }
+
+            .carouselText {
+                color: #000000;
+                font-size: 24px;
+                font-weight: 600;
+                margin-bottom: 30px;
+            }
+
+            .carouselImage {
+                img {
+                    display: block;
+                    max-width: 100%;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+
+    .custom-carousel-nav, .custom-carousel-pagination {
+        display: none;
+    }
+}
+
+@media(min-width: 768px) {
+    .customCarousel {
+        padding: 0;
+        padding-bottom: 40px;
+
+        ul {
+            li {
+                .dedicated {
+                    position: relative;
+                    z-index: 30;
+                    margin-bottom: 50px;
+                }
+
+                .carouselText {
+                    padding-left: 10px;
+                    width: 200px;
+                    line-height: 32px;
+                    float: left;
+                    padding-top: 145px;
+
+                    span {
+                        width: 145px;
+                        display: inline-block;
+                    }
+                }
+
+                .carouselImage {
+                    float: left;
+                    margin-top: 45px;
+                    margin-left: 30px;
+                    width: 60%;
+                }
+
+                &.seal {
+                    .carouselImage {
+                        margin-left: 80px;
+                        margin-top: 70px;
+                    }
+                }
+
+                &.fox {
+                    .carouselImage {
+                        margin-top: 65px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(min-width: 960px) {
+    .customCarousel {
+        padding-bottom: 70px;
+
+        ul {
+            li {
+                .carouselImage {
+                    width: auto;
+                }
+
+                &.fox {
+                    .carouselImage {
+                        margin-top: 65px;
+                        margin-left: 180px;
+                    }
+                }
+            }
+        }
+        .custom-carousel-nav {
+            display: block;
+
+            .next, .prev {
+                background: url($imgPath + "carouselControls.png") no-repeat left top;
+                width: 47px;
+                height: 128px;
+                text-indent: -9999px;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                margin: auto 0;
+                right: -180px;
+                cursor: pointer;
+            }
+
+            .prev {
+                background-position: left bottom;
+                right: auto;
+                left: -180px;
+            }
+        }
+
+        .custom-carousel-pagination {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            display: block;
+            text-align: center;
+            @include clearfix;
+
+            li {
+                background: #fcd7ad;
+                width: 90px;
+                height: 9px;
+                display: inline-block;
+                margin-right: 70px;
+                cursor: pointer;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                &.active {
+                    background: #ffbb6c;
+                }
             }
         }
     }
