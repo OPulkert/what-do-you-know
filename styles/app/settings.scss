@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Dosis:400,300,500,600,700&subset=latin,latin-ext);
+
 * {
     margin: 0;
     padding: 0;
@@ -23,13 +25,13 @@ html {
 body {
     margin: 0;
     font-size: 18px;
-    line-height: 20px;
+    line-height: 21px;
     font-weight: normal;
     position: relative;
-    background: #fff;
+    background: #936132;
     width: 100%;
     height: 100%;
-    font-family: Arial, sans-serif;
+    font-family: 'Dosis', sans-serif;
     color: #00529e;
 }
 
@@ -52,7 +54,7 @@ a {
     color: #00529e;
     font-size: 18px;
     text-decoration: underline;
-    font-family: Arial, sans-serif;
+    font-family: 'Dosis', sans-serif;
 }
 
 a:hover {

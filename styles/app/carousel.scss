@@ -1,0 +1,13 @@
+.customCarousel {
+    width: 100%;
+
+    ul {
+        li {
+            img {
+                display: block;
+                max-width: 100%;
+                margin: 0 auto;
+            }
+        }
+    }
+}
