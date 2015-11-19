@@ -20,8 +20,41 @@ nav {
                 display: inline-block;
                 line-height: 13px;
 
+                i {
+                    &:before {
+                        content: '';
+                        @extend .sprite;
+                    }
+                }
+
                 span {
                     display: block;
+                }
+
+                i{
+                    &.question {
+                         &:before {
+                             @extend .sprite--ico-question;
+                         }
+                     }
+
+                    &.cons {
+                        &:before {
+                            @extend .sprite--ico-hand;
+                        }
+                    }
+
+                    &.stupid {
+                        &:before {
+                            @extend .sprite--ico-monkey;
+                        }
+                    }
+
+                    &.shout {
+                        &:before {
+                            @extend .sprite--ico-man;
+                        }
+                    }
                 }
             }
         }
@@ -30,19 +63,38 @@ nav {
 
 @media(min-width: 768px) {
     nav {
-        position: relative;
-        bottom: auto;
+        position: absolute;
         top: 0;
+        bottom: 0;
+        left: auto;
+        right: 10px;
+        margin: auto;
         background: none;
-        float: right;
         width: auto;
+        display: table;
+
+        #line {
+            position: absolute;
+            top: -32px;
+            left: 0;
+            width: 100px;
+            height: 6px;
+            background: #ffbb6c;
+        }
 
         ul {
             li {
                 width: auto;
+                margin-left: 50px;
+
+                &:first-child {
+                    margin-left: 0;
+                }
 
                 a {
                     display: table;
+                    text-align: left;
+                    font-size: 18px;
 
                     i {
                         display: table-cell;
@@ -52,9 +104,23 @@ nav {
                     span {
                         display: table-cell;
                         vertical-align: middle;
+                        line-height: 21px;
+                        padding-left: 10px;
+                    }
+
+                    &:hover {
+                        span {
+                            color: #ffbb6c;
+                        }
                     }
                 }
             }
         }
+    }
+}
+
+@media(min-width: 960px) {
+    nav {
+        right: 30px;
     }
 }

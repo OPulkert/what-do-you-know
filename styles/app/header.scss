@@ -30,5 +30,27 @@ header {
 @media(min-width: 768px) {
     header {
         height: 115px;
+        padding: 0;
+
+        .container {
+            height: 115px;
+        }
+
+        #logo {
+            display: table;
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+    }
+}
+
+@media(min-width: 960px) {
+    header {
+        #logo {
+            left: 0;
+        }
     }
 }

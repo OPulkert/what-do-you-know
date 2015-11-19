@@ -6,14 +6,26 @@
 
 .sprite {
     
-    @include retina-image($imgPath + sprite, 73px 98px, 'png', null, '@2x', false);
+    @include retina-image($imgPath + sprite, 73px 198px, 'png', null, '@2x', false);
     
     background-repeat: no-repeat;
     position: relative;
     display: inline-block;
     text-indent: -9999px;
 
+    &--ico-question {
+        @include calculate(47px, 47px, 0px, 0px);
+    }
+    &--ico-monkey {
+        @include calculate(61px, 49px, 0px, 47px);
+    }
+    &--ico-hand {
+        @include calculate(36px, 51px, 0px, 96px);
+    }
+    &--ico-man {
+        @include calculate(41px, 53px, 0px, 147px);
+    }
     &--logo {
-        @include calculate(146px, 196px, 0px, 0px);
+        @include calculate(146px, 196px, 0px, 200px);
     }
 }
