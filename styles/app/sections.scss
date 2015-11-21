@@ -1,11 +1,15 @@
 section {
     position: relative;
 
-    &.carousel {
+    &.carousel, &.content {
         background: #dbdad6;
         width: 100%;
         @include clearfix;
         padding: 20px 0;
+    }
+
+    &.content {
+        background: #fff;
     }
 }
 
@@ -13,6 +17,10 @@ section {
     section {
         &.carousel {
             padding: 0;
+        }
+
+        &.content {
+            padding: 40px 0;
         }
     }
 }

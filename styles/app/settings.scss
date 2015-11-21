@@ -94,6 +94,14 @@ a:hover {
     padding: 0 10px;
 }
 
+h2 {
+    color: #000000;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 32px;
+    margin-bottom: 30px;
+}
+
 @mixin clearfix {
     &:before,
     &:after {
@@ -133,10 +141,21 @@ a:hover {
     transition:         $transition;
 }
 
+@media(min-width: 768px) {
+    h2 {
+        margin-bottom: 50px;
+    }
+}
+
 @media (min-width: 960px) {
     .container {
         padding: 0;
         width: 960px;
+        margin: 0 auto;
+    }
+
+    .w940 {
+        width: 940px;
         margin: 0 auto;
     }
 }

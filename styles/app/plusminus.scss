@@ -1,0 +1,78 @@
+.plusminus {
+    text-align: center;
+
+    li {
+        margin-bottom: 50px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        svg {
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #363636;
+            font-weight: lighter;
+            line-height: 40px;
+
+            span {
+                font-weight: 600;
+            }
+
+            a {
+                font-size: 18px;
+                color: #363636;
+                font-weight: normal;
+            }
+        }
+    }
+}
+
+@media(min-width: 568px) {
+    .plusminus {
+        li {
+            float: left;
+            width: 50%;
+
+            .svgHolder {
+                min-height: 125px;
+                display: table;
+                width: 100%;
+
+                div {
+                    display: table-cell;
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+}
+
+@media(min-width: 960px) {
+    .plusminus {
+        li {
+            text-align: left;
+            width: 460px;
+
+            .svgHolder {
+                width: 160px;
+                text-align: center;
+            }
+
+            &:nth-child(2n) {
+                float: right;
+
+                .svgHolder {
+                    width: 240px;
+                }
+            }
+
+            p {
+
+            }
+        }
+    }
+}

@@ -4,6 +4,11 @@
     position: relative;
     @include clearfix;
 
+    .custom-carousel-wrapper {
+        overflow: hidden;
+        width: 100%;
+    }
+
     ul {
         li {
             position: relative;
@@ -120,6 +125,7 @@
                 margin: auto 0;
                 right: -180px;
                 cursor: pointer;
+                z-index: 999;
             }
 
             .prev {
