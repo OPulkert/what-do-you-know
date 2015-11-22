@@ -33,8 +33,6 @@
                 $apStatus,
                 touchStartY = 0,
                 touchStartX = 0,
-                touchStartDelta = 0,
-                elementHeight;
 
 
             var init = function() {
@@ -42,7 +40,6 @@
                 $ul = $('ul', $base);
                 $items = $ul.children();
                 $itemsCount = $items.length;
-                elementHeight = ($base.offsetHeight) / $itemsCount;
                 wrapItems();
 
                 if(options.infinite) {
