@@ -32,7 +32,7 @@
                 $hoverStatus,
                 $apStatus,
                 touchStartY = 0,
-                touchStartX = 0,
+                touchStartX = 0;
 
 
             var init = function() {
