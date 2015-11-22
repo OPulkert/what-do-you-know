@@ -1,0 +1,88 @@
+.formHolder {
+    @include clearfix;
+}
+
+.formRow {
+    @include clearfix;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+label {
+    color: #181818;
+    font-size: 18px;
+    font-weight: 500;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.uiInput, .uiTextarea {
+    background: #fff;
+    width: 100%;
+    height: 53px;
+    border: 2px solid #936132;
+    padding-left: 10px;
+    outline: none;
+    font-size: 18px;
+    font-weight: normal;
+    color: #181818;
+    font-family: 'Dosis', sans-serif;
+
+    &.datePicker {
+        height: 43px;
+    }
+}
+
+.uiTextarea {
+    resize: none;
+    padding: 10px;
+    height: 160px;
+}
+
+.ui-datepicker-trigger {
+    position: absolute;
+    top: 41px;
+    right: 7px;
+}
+
+input:required:valid, textarea:required:valid {
+    border-color: #0ae639;
+}
+
+@media(min-width: 768px) {
+    .formLeft, .formRight {
+        width: 49%;
+        float: left;
+    }
+
+    .formRight {
+        float: right;
+    }
+
+    .submit {
+        .btnBrown {
+            width: 170px;
+        }
+    }
+}
+
+@media(min-width: 990px) {
+    label {
+        padding-left: 10px;
+    }
+
+    .formLeft {
+        width: 410px;
+        margin-left: 17px;
+    }
+
+    .formRight {
+        width: 250px;
+        float: left;
+        margin-left: 60px;
+    }
+
+    .submit {
+        margin-left: 17px;
+    }
+}

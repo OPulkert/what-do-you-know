@@ -85,7 +85,6 @@ a:hover {
     width: 100%;
     position: relative;
     height: 100%;
-    overflow-x: hidden;
 }
 
 .container {
@@ -157,5 +156,11 @@ h2 {
     .w940 {
         width: 940px;
         margin: 0 auto;
+    }
+}
+
+@media (min-width: 990px) {
+    .container.container2 {
+        width: 990px;
     }
 }

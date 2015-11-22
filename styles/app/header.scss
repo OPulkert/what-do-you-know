@@ -49,6 +49,11 @@ header {
 
 @media(min-width: 960px) {
     header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 999;
+
         #logo {
             left: 0;
         }

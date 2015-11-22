@@ -1,4 +1,4 @@
-<section class="section carousel">
+<section id="sectionCarousel" class="section carousel anchor">
 	<div class="container">
 
 		<div id="carousel" class="customCarousel">
@@ -43,38 +43,5 @@
 				</li>
 			</ul>
 		</div> <!-- /carousel -->
-
-		<form name="ajaxform" id="ajaxform" action="ajax-form-submit.php" method="POST">
-			First Name: <input type="text" name="fname" value =""/> <br/>
-			Last Name: <input type="text" name="lname" value ="" /> <br/>
-			Email : <input type="text" name="email" value=""/> <br/>
-		</form>
-
-		<script type="text/javascript">
-			$(document).ready(function() {
-				$("#ajaxform").submit(function(e)
-				{
-					var postData = $(this).serializeArray();
-					var formURL = $(this).attr("action");
-					$.ajax(
-						{
-							url : formURL,
-							type: "POST",
-							data : postData,
-							success:function(data, textStatus, jqXHR)
-							{
-
-							},
-							error: function(jqXHR, textStatus, errorThrown)
-							{
-							}
-						});
-					e.preventDefault();	//STOP default action
-				});
-
-				$("#ajaxform").submit(); //SUBMIT FORM
-
-			});
-		</script>
 	</div>
 </section>

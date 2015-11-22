@@ -1,7 +1,7 @@
 section {
     position: relative;
 
-    &.carousel, &.content {
+    &.carousel, &.content, &.list, &.form {
         background: #dbdad6;
         width: 100%;
         @include clearfix;
@@ -10,17 +10,58 @@ section {
 
     &.content {
         background: #fff;
+        overflow-x: hidden;
+
+        .horseAnimate, .sealAnimate {
+            display: none;
+        }
+    }
+
+    &.list {
+        @include linear-gradient(#c1c1c1 0%, #dbdad6 48%, #dbdad6 100%);
+        padding-bottom: 100px;
+    }
+
+    &.form {
+        @include linear-gradient(#c1c1c1 0%, #dbdad6 48%, #dbdad6 100%);
     }
 }
 
 @media(min-width: 768px) {
     section {
-        &.carousel {
-            padding: 0;
+        &.list {
+            h2 {
+                width: 330px;
+            }
         }
 
-        &.content {
+        &.carousel {
+            padding-top: 115px;
+        }
+
+        &.content, &.list, &.form {
             padding: 40px 0;
+        }
+    }
+}
+
+@media(min-width: 1300px) {
+    section {
+        &.content {
+            .horseAnimate, .sealAnimate {
+                display: block;
+                position: absolute;
+                bottom: 50px;
+                left: -165px;
+                margin: auto;
+            }
+
+            .horseAnimate {
+                left: auto;
+                right: -155px;
+                top: 81px;
+                bottom: auto;
+            }
         }
     }
 }

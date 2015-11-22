@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href='https://fonts.googleapis.com/css?family=Dosis:400,300,500,600,700&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="styles/styles.css" media="screen,projection">
+	<link rel="stylesheet" href="vendors/styles/jquery-ui.css" media="screen,projection">
 
 	<link rel="apple-touch-icon" sizes="57x57" href="assets/favicons/apple-touch-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="assets/favicons/apple-touch-icon-60x60.png">
@@ -29,10 +30,21 @@
 	<meta name="theme-color" content="#ffffff">
 
 	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="vendors/scripts/jquery-ui.js"></script>
+	<script type="text/javascript" src="vendors/scripts/modernizr.js"></script>
 	<script type="text/javascript" src="scripts/custom-carousel.js"></script>
-	<script type="text/javascript" src="vendors/modernizr.js"></script>
+	<script type="text/javascript" src="scripts/scripts.js"></script>
+	<script type="text/javascript" src="scripts/control.js"></script>
+
 
 	<!--[if lt IE 9]>
+		<script>
+			document.createElement('header');
+			document.createElement('nav');
+			document.createElement('section');
+			document.createElement('footer');
+		</script>
+
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.js"></script>
 	<![endif]-->
 </head>
@@ -44,9 +56,15 @@
 
 		<!-- @include sections/section-content.html -->
 
+		<!-- @include sections/section-list.html -->
+
+		<!-- @include sections/section-form.html -->
+
+		<!-- @include sections/section-carousel2.html -->
+
         <!-- @include common/footer.html -->
 	</div>
-	<script type="text/javascript" src="scripts/control.js"></script>
-	<script type="text/javascript" src="scripts/scripts.js"></script>
+
+
 </body>
 </html>

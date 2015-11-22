@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href='https://fonts.googleapis.com/css?family=Dosis:400,300,500,600,700&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="styles/styles.css" media="screen,projection">
+	<link rel="stylesheet" href="vendors/styles/jquery-ui.css" media="screen,projection">
 
 	<link rel="apple-touch-icon" sizes="57x57" href="assets/favicons/apple-touch-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="assets/favicons/apple-touch-icon-60x60.png">
@@ -29,10 +30,21 @@
 	<meta name="theme-color" content="#ffffff">
 
 	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="vendors/scripts/jquery-ui.js"></script>
+	<script type="text/javascript" src="vendors/scripts/modernizr.js"></script>
 	<script type="text/javascript" src="scripts/custom-carousel.js"></script>
-	<script type="text/javascript" src="vendors/modernizr.js"></script>
+	<script type="text/javascript" src="scripts/scripts.js"></script>
+	<script type="text/javascript" src="scripts/control.js"></script>
+
 
 	<!--[if lt IE 9]>
+		<script>
+			document.createElement('header');
+			document.createElement('nav');
+			document.createElement('section');
+			document.createElement('footer');
+		</script>
+
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.js"></script>
 	<![endif]-->
 </head>
@@ -49,20 +61,20 @@
         
         		<nav>
         			<ul>
-        				<li class="active">
-        					<a href="#"><i class="question"></i><span>Basic<br />question</span></a>
+        				<li>
+        					<a href="#sectionCarousel" class="anchorLink"><i class="question"></i><span>Basic<br />question</span></a>
         				</li>
         
         				<li>
-        					<a href="#"><i class="cons"></i><span>Pros<br />and Cons</span></a>
+        					<a href="#sectionContent" class="anchorLink"><i class="cons"></i><span>Pros<br />and Cons</span></a>
         				</li>
         
         				<li>
-        					<a href="#"><i class="stupid"></i><span>People`s<br />stupidity</span></a>
+        					<a href="#sectionList" class="anchorLink"><i class="stupid"></i><span>People`s<br />stupidity</span></a>
         				</li>
         
         				<li>
-        					<a href="#"><i class="shout"></i><span>Shout<br />it out</span></a>
+        					<a href="#sectionForm" class="anchorLink"><i class="shout"></i><span>Shout<br />it out</span></a>
         				</li>
         			</ul>
         
@@ -71,7 +83,7 @@
         	</div>
         </header>
 
-		<section class="section carousel">
+		<section id="sectionCarousel" class="section carousel anchor">
 			<div class="container">
 		
 				<div id="carousel" class="customCarousel">
@@ -116,43 +128,13 @@
 						</li>
 					</ul>
 				</div> <!-- /carousel -->
-		
-				<form name="ajaxform" id="ajaxform" action="ajax-form-submit.php" method="POST">
-					First Name: <input type="text" name="fname" value =""/> <br/>
-					Last Name: <input type="text" name="lname" value ="" /> <br/>
-					Email : <input type="text" name="email" value=""/> <br/>
-				</form>
-		
-				<script type="text/javascript">
-					$(document).ready(function() {
-						$("#ajaxform").submit(function(e)
-						{
-							var postData = $(this).serializeArray();
-							var formURL = $(this).attr("action");
-							$.ajax(
-								{
-									url : formURL,
-									type: "POST",
-									data : postData,
-									success:function(data, textStatus, jqXHR)
-									{
-		
-									},
-									error: function(jqXHR, textStatus, errorThrown)
-									{
-									}
-								});
-							e.preventDefault();	//STOP default action
-						});
-		
-						$("#ajaxform").submit(); //SUBMIT FORM
-		
-					});
-				</script>
 			</div>
 		</section>
 
-		<section id="content" class="section content">
+		<section id="sectionContent" class="section content anchor">
+			<img src="/assets/images/horseHalf.png" alt="horse" class="horseAnimate" />
+			<img src="/assets/images/sealHalf.png" alt="seal" class="sealAnimate" />
+		
 			<div class="container">
 				<div class="w940">
 					<h2>Lets have a look at the pros and cons ...</h2>
@@ -160,11 +142,9 @@
 						<li>
 							<div class="svgHolder">
 								<div>
-									<svg width="76pt" height="75pt" viewBox="0 0 76 75" version="1.1" xmlns="http://www.w3.org/2000/svg">
-										<path fill="#ffffff" d=" M 0.00 0.00 L 42.62 0.00 C 41.16 11.15 39.58 22.28 37.83 33.38 C 32.56 33.24 27.30 32.65 22.03 33.02 C 14.82 33.35 7.57 32.70 0.38 33.30 C 0.34 36.31 0.33 39.32 0.48 42.33 C 12.56 41.44 24.62 40.34 36.66 39.13 C 35.32 49.76 32.85 60.25 31.99 70.95 C 31.79 72.32 31.42 73.66 31.05 75.00 L 0.00 75.00 L 0.00 0.00 Z" />
-										<path fill="#018d01" d=" M 42.62 0.00 L 45.91 0.00 C 46.16 0.31 46.67 0.92 46.92 1.22 C 48.64 1.49 50.34 1.91 52.01 2.42 C 49.55 12.83 46.58 23.12 43.56 33.39 C 45.32 33.87 47.11 34.31 48.95 34.18 C 57.97 34.01 66.99 34.28 76.00 34.68 L 76.00 35.71 C 70.90 35.39 66.00 37.22 60.89 36.90 C 54.64 37.99 48.28 37.76 42.03 38.77 C 39.21 50.97 35.30 62.88 32.14 75.00 L 31.05 75.00 C 31.42 73.66 31.79 72.32 31.99 70.95 C 32.85 60.25 35.32 49.76 36.66 39.13 C 24.62 40.34 12.56 41.44 0.48 42.33 C 0.33 39.32 0.34 36.31 0.38 33.30 C 7.57 32.70 14.82 33.35 22.03 33.02 C 27.30 32.65 32.56 33.24 37.83 33.38 C 39.58 22.28 41.16 11.15 42.62 0.00 Z" />
-										<path fill="#ffffff" d=" M 45.91 0.00 L 76.00 0.00 L 76.00 34.68 C 66.99 34.28 57.97 34.01 48.95 34.18 C 47.11 34.31 45.32 33.87 43.56 33.39 C 46.58 23.12 49.55 12.83 52.01 2.42 C 50.34 1.91 48.64 1.49 46.92 1.22 C 46.67 0.92 46.16 0.31 45.91 0.00 Z" />
-										<path fill="#ffffff" d=" M 60.89 36.90 C 66.00 37.22 70.90 35.39 76.00 35.71 L 76.00 75.00 L 32.14 75.00 C 35.30 62.88 39.21 50.97 42.03 38.77 C 48.28 37.76 54.64 37.99 60.89 36.90 Z" />
+									<svg width="71" height="70" viewBox="0 0 71 70">
+										<path style="fill:#048c0a;" d="M43.000,1.000 L51.000,2.000 L34.000,69.000 L32.000,69.000 L43.000,1.000 Z"/>
+										<path style="fill:#048c0a;" d="M1.000,42.000 L2.000,33.000 L69.000,35.000 L69.000,36.000 L1.000,42.000 Z"/>
 									</svg>
 								</div>
 							</div>
@@ -176,9 +156,8 @@
 						<li>
 							<div class="svgHolder">
 								<div>
-									<svg width="73pt" height="10pt" viewBox="0 0 73 10" version="1.1" xmlns="http://www.w3.org/2000/svg">
-										<path fill="#ffffff" d=" M 0.00 0.00 L 73.00 0.00 L 73.00 10.00 L 1.25 10.00 C 25.03 6.75 49.12 6.12 72.92 2.93 C 62.40 0.97 51.60 1.89 40.96 1.44 C 27.31 0.85 13.65 1.52 0.00 0.97 L 0.00 0.00 Z" />
-										<path fill="#ac1d29" d=" M 0.00 0.97 C 13.65 1.52 27.31 0.85 40.96 1.44 C 51.60 1.89 62.40 0.97 72.92 2.93 C 49.12 6.12 25.03 6.75 1.25 10.00 L 0.00 10.00 L 0.00 0.97 Z" />
+									<svg width="73" height="10" viewBox="0 0 73 10">
+										<path style="fill: #a91e2b;" d="M-0.000,10.000 L-0.000,1.000 L72.000,2.000 L72.000,3.000 L-0.000,10.000 Z" class="cls-1"/>
 									</svg>
 								</div>
 							</div>
@@ -191,11 +170,9 @@
 						<li>
 							<div class="svgHolder">
 								<div>
-									<svg width="76pt" height="75pt" viewBox="0 0 76 75" version="1.1" xmlns="http://www.w3.org/2000/svg">
-										<path fill="#ffffff" d=" M 0.00 0.00 L 42.62 0.00 C 41.16 11.15 39.58 22.28 37.83 33.38 C 32.56 33.24 27.30 32.65 22.03 33.02 C 14.82 33.35 7.57 32.70 0.38 33.30 C 0.34 36.31 0.33 39.32 0.48 42.33 C 12.56 41.44 24.62 40.34 36.66 39.13 C 35.32 49.76 32.85 60.25 31.99 70.95 C 31.79 72.32 31.42 73.66 31.05 75.00 L 0.00 75.00 L 0.00 0.00 Z" />
-										<path fill="#018d01" d=" M 42.62 0.00 L 45.91 0.00 C 46.16 0.31 46.67 0.92 46.92 1.22 C 48.64 1.49 50.34 1.91 52.01 2.42 C 49.55 12.83 46.58 23.12 43.56 33.39 C 45.32 33.87 47.11 34.31 48.95 34.18 C 57.97 34.01 66.99 34.28 76.00 34.68 L 76.00 35.71 C 70.90 35.39 66.00 37.22 60.89 36.90 C 54.64 37.99 48.28 37.76 42.03 38.77 C 39.21 50.97 35.30 62.88 32.14 75.00 L 31.05 75.00 C 31.42 73.66 31.79 72.32 31.99 70.95 C 32.85 60.25 35.32 49.76 36.66 39.13 C 24.62 40.34 12.56 41.44 0.48 42.33 C 0.33 39.32 0.34 36.31 0.38 33.30 C 7.57 32.70 14.82 33.35 22.03 33.02 C 27.30 32.65 32.56 33.24 37.83 33.38 C 39.58 22.28 41.16 11.15 42.62 0.00 Z" />
-										<path fill="#ffffff" d=" M 45.91 0.00 L 76.00 0.00 L 76.00 34.68 C 66.99 34.28 57.97 34.01 48.95 34.18 C 47.11 34.31 45.32 33.87 43.56 33.39 C 46.58 23.12 49.55 12.83 52.01 2.42 C 50.34 1.91 48.64 1.49 46.92 1.22 C 46.67 0.92 46.16 0.31 45.91 0.00 Z" />
-										<path fill="#ffffff" d=" M 60.89 36.90 C 66.00 37.22 70.90 35.39 76.00 35.71 L 76.00 75.00 L 32.14 75.00 C 35.30 62.88 39.21 50.97 42.03 38.77 C 48.28 37.76 54.64 37.99 60.89 36.90 Z" />
+									<svg width="71" height="70" viewBox="0 0 71 70">
+										<path style="fill:#048c0a;" d="M43.000,1.000 L51.000,2.000 L34.000,69.000 L32.000,69.000 L43.000,1.000 Z"/>
+										<path style="fill:#048c0a;" d="M1.000,42.000 L2.000,33.000 L69.000,35.000 L69.000,36.000 L1.000,42.000 Z"/>
 									</svg>
 								</div>
 							</div>
@@ -207,9 +184,8 @@
 						<li>
 							<div class="svgHolder">
 								<div>
-									<svg width="73pt" height="10pt" viewBox="0 0 73 10" version="1.1" xmlns="http://www.w3.org/2000/svg">
-										<path fill="#ffffff" d=" M 0.00 0.00 L 73.00 0.00 L 73.00 10.00 L 1.25 10.00 C 25.03 6.75 49.12 6.12 72.92 2.93 C 62.40 0.97 51.60 1.89 40.96 1.44 C 27.31 0.85 13.65 1.52 0.00 0.97 L 0.00 0.00 Z" />
-										<path fill="#ac1d29" d=" M 0.00 0.97 C 13.65 1.52 27.31 0.85 40.96 1.44 C 51.60 1.89 62.40 0.97 72.92 2.93 C 49.12 6.12 25.03 6.75 1.25 10.00 L 0.00 10.00 L 0.00 0.97 Z" />
+									<svg width="73" height="10" viewBox="0 0 73 10">
+										<path style="fill: #a91e2b;" d="M-0.000,10.000 L-0.000,1.000 L72.000,2.000 L72.000,3.000 L-0.000,10.000 Z" class="cls-1"/>
 									</svg>
 								</div>
 							</div>
@@ -223,11 +199,164 @@
 			</div>
 		</section>
 
+		<section id="sectionList" class="section list anchor">
+			<div class="container">
+				<div class="w940">
+					<h2>
+						What people think about this sophisticated problem?
+					</h2>
+		
+					<ul class="list">
+						<li>
+							<div class="name">Jonas Horselover</div>
+							<p>
+								Doesnt know but had sex with a horse and it was fine he thinks ...
+							</p>
+							<a href="#" class="btn">
+								<span>See the whole report</span>
+							</a>
+						</li>
+		
+						<li>
+							<div class="name">Jonas Horselover</div>
+							<p>
+								Doesnt know but had sex with a horse and it was fine he thinks ...
+							</p>
+							<a href="#" class="btn">
+								<span>See the whole report</span>
+							</a>
+						</li>
+		
+						<li>
+							<div class="name">
+								<img src="/assets/images/photo.jpg" alt="photo" />
+								Rickki Diver
+							</div>
+							<p>
+								Tried to ride a seal once and it was NOT a good idea. Almost got arrested for animal harrasment.
+							</p>
+							<a href="#" class="btn arrowLeft">
+								<span>See the whole report</span>
+							</a>
+						</li>
+		
+						<li>
+							<div class="name">
+								<img src="/assets/images/photo.jpg" alt="photo" />
+								Rickki Diver
+							</div>
+							<p>
+								Tried to ride a seal once and it was NOT a good idea
+							</p>
+							<a href="#" class="btn arrowRight">
+								<span>See the whole report</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<section id="sectionForm" class="section form anchor">
+			<div class="container container2">
+				<div id="tabs">
+					<ul class="tabsLink">
+						<li>
+							<a href="#tabsForm">
+								Chat with the Seal
+							</a>
+						</li>
+						<li>
+							<a href="#tabsOther" class="second">
+								Chat with the Horse
+							</a>
+						</li>
+					</ul>
+		
+					<div class="tabsContent">
+						<div id="tabsForm">
+							<form name="ajaxform" id="ajaxform" action="form-submit.php" method="POST">
+								<div class="formHolder">
+									<div class="formLeft">
+										<div class="formRow">
+											<label for="name">
+												Your Name
+											</label>
+											<input type="text" name="name" id="name" class="uiInput" required />
+										</div>
+		
+										<div class="formRow">
+											<label for="email">
+												Your e-mail
+											</label>
+											<input type="email" name="email" id="email" class="uiInput" required />
+										</div>
+		
+										<div class="formRow">
+											<label for="message">
+												Your message
+											</label>
+											<textarea name="message" id="message" rows="10" class="uiTextarea" cols="50" required></textarea>
+										</div>
+									</div>
+		
+									<div class="formRight">
+										<div class="formRow">
+											<label for="date">
+												Date? (will you go with me?)
+											</label>
+											<input type="text" name="date" id="date" class="uiInput datePicker" required />
+										</div>
+									</div>
+								</div>
+		
+								<div class="formRow submit">
+									<input type="submit" name="submit" id="submit" class="btnBrown" value="SHOUT IT OUT!" />
+								</div>
+							</form>
+						</div>
+		
+						<div id="tabsOther">
+							Nečum :-)
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="sectionCarousel2" class="section carousel2">
+			<div id="carousel2" class="customCarousel">
+				<ul>
+					<li>
+						<img src="/assets/images/horseBig.jpg" />
+					</li>
+		
+					<li>
+						<img src="/assets/images/foxBig.jpg" />
+					</li>
+				</ul>
+			</div>
+		</section>
+		
+
         <footer>
-        	<a href="#content" class="anchorLink">Ke contentu</a>
+        	<div class="container">
+        		<div class="in">
+        			<div class="footerTitle">FAQ</div>
+        			<ul>
+        				<li>
+        					<a href="#sectionCarousel" id="horseSlide" class="anchorLink">How does a horse look like?</a>
+        				</li>
+        
+        				<li>
+        					<a href="#sectionCarousel" id="sealSlide" class="anchorLink">How does a seal look like?</a>
+        				</li>
+        			</ul>
+        		</div>
+        	</div>
         </footer>
 	</div>
-	<script type="text/javascript" src="scripts/control.js"></script>
-	<script type="text/javascript" src="scripts/scripts.js"></script>
+
+
 </body>
 </html>

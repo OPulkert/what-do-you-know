@@ -1,0 +1,64 @@
+#tabs {
+    position: relative;
+    @include clearfix;
+
+    .tabsLink {
+        @include clearfix;
+        margin-top: -79px;
+
+        li {
+            float: left;
+            width: 50%;
+
+            a {
+                font-size: 18px;
+                color: #181818;
+                font-weight: 500;
+                height: 59px;
+                line-height: 59px;
+                display: block;
+                border: 2px solid #818181;
+                text-decoration: none;
+                text-align: center;
+                background: #dbdad6;
+
+                &.active {
+                    border: 2px solid #000000;
+                    border-bottom: 0;
+                    background: #c1c1c1;
+                    color: #840b1d;
+                }
+            }
+        }
+    }
+
+    .tabsContent {
+        padding-top: 40px;
+        @include clearfix;
+    }
+}
+
+@media(min-width: 768px) {
+    #tabs {
+        .tabsLink {
+            margin-top: -98px;
+        }
+    }
+}
+
+@media(min-width: 990px) {
+    #tabs {
+        .tabsLink {
+            li {
+                a {
+                    text-align: left;
+                    padding-left: 23px;
+
+                    &.second {
+                        padding-left: 7px;
+                    }
+                }
+            }
+        }
+    }
+}

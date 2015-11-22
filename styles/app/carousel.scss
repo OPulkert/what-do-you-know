@@ -43,6 +43,19 @@
     }
 }
 
+#carousel2 {
+    padding: 0;
+    ul {
+        li {
+            img {
+                display: block;
+                max-width: 100%;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
 @media(min-width: 768px) {
     .customCarousel {
         padding: 0;
@@ -112,26 +125,23 @@
             }
         }
         .custom-carousel-nav {
-            display: block;
+            margin: 0 auto;
+            display: table;
+            @include clearfix;
 
             .next, .prev {
                 background: url($imgPath + "carouselControls.png") no-repeat left top;
                 width: 47px;
                 height: 128px;
                 text-indent: -9999px;
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                margin: auto 0;
-                right: -180px;
+                float: left;
                 cursor: pointer;
                 z-index: 999;
             }
 
             .prev {
                 background-position: left bottom;
-                right: auto;
-                left: -180px;
+                margin-right: 300px;
             }
         }
 
@@ -159,6 +169,43 @@
                 &.active {
                     background: #ffbb6c;
                 }
+            }
+        }
+    }
+}
+
+@media(min-width: 1200px) {
+    .customCarousel {
+        .custom-carousel-nav {
+            margin: 0;
+            display: block;
+
+            .next, .prev {
+                float: none;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                margin: auto 0;
+                right: -100px;
+            }
+
+            .prev {
+                right: auto;
+                left: -100px;
+            }
+        }
+    }
+}
+
+@media(min-width: 1350px) {
+    .customCarousel {
+        .custom-carousel-nav {
+            .next {
+                right: -180px;
+            }
+
+            .prev {
+                left: -180px;
             }
         }
     }

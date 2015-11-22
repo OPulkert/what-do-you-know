@@ -1,0 +1,66 @@
+<section id="sectionForm" class="section form anchor">
+	<div class="container container2">
+		<div id="tabs">
+			<ul class="tabsLink">
+				<li>
+					<a href="#tabsForm">
+						Chat with the Seal
+					</a>
+				</li>
+				<li>
+					<a href="#tabsOther" class="second">
+						Chat with the Horse
+					</a>
+				</li>
+			</ul>
+
+			<div class="tabsContent">
+				<div id="tabsForm">
+					<form name="ajaxform" id="ajaxform" action="form-submit.php" method="POST">
+						<div class="formHolder">
+							<div class="formLeft">
+								<div class="formRow">
+									<label for="name">
+										Your Name
+									</label>
+									<input type="text" name="name" id="name" class="uiInput" required />
+								</div>
+
+								<div class="formRow">
+									<label for="email">
+										Your e-mail
+									</label>
+									<input type="email" name="email" id="email" class="uiInput" required />
+								</div>
+
+								<div class="formRow">
+									<label for="message">
+										Your message
+									</label>
+									<textarea name="message" id="message" rows="10" class="uiTextarea" cols="50" required></textarea>
+								</div>
+							</div>
+
+							<div class="formRight">
+								<div class="formRow">
+									<label for="date">
+										Date? (will you go with me?)
+									</label>
+									<input type="text" name="date" id="date" class="uiInput datePicker" required />
+								</div>
+							</div>
+						</div>
+
+						<div class="formRow submit">
+							<input type="submit" name="submit" id="submit" class="btnBrown" value="SHOUT IT OUT!" />
+						</div>
+					</form>
+				</div>
+
+				<div id="tabsOther">
+					Nečum :-)
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

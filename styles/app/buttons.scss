@@ -1,0 +1,76 @@
+.btn {
+    @include linear-gradient(#936132 0%, #bb8049 48%, #bb8049 100%);
+    display: table;
+    width: 100%;
+    height: 46px;
+    font-weight: lighter;
+    font-size: 18px;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: underline;
+    position: relative;
+
+    span {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    &:hover {
+        @include linear-gradient(#bb8049 0%, #936132 48%, #936132 100%);
+        text-decoration: none;
+    }
+
+    &.arrowLeft {
+        text-align: right;
+        padding-right: 20px;
+
+        &:before {
+            content: '';
+            float: left;
+            background: url($imgPath + 'btn-arrow.png') no-repeat left top;
+            width: 11px;
+            height: 29px;
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            margin: auto 0;
+        }
+    }
+
+    &.arrowRight {
+        text-align: left;
+        padding-left: 20px;
+
+        &:before {
+            content: '';
+            float: left;
+            background: url($imgPath + 'btn-arrow.png') no-repeat left top;
+            width: 11px;
+            height: 29px;
+            position: absolute;
+            right: 15px;
+            top: 0;
+            bottom: 0;
+            margin: auto 0;
+        }
+    }
+}
+
+.btnBrown {
+    background: #936132;
+    width: 100%;
+    height: 46px;
+    line-height: 46px;
+    font-family: 'Dosis', sans-serif;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    @include transition(background 300ms linear);
+    cursor: pointer;
+
+    &:hover {
+        background: #7f4d1f;
+    }
+}
